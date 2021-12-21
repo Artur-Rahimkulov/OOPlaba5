@@ -29,6 +29,59 @@ public:
 	}
 
 };
+class Duck : public Animal {
+public:
+	Duck() {
+
+	}
+	void sit() {
+		printf("Duck::hunt\n");
+	}
+	void voice() {
+		printf("kryak");
+	}
+	void Do1() {
+		printf("Duck::Do1\n");
+	}
+
+	void Do3() {
+		printf("Duck::Do3\n");
+	}
+	string classname() {
+		return "Duck";
+	}
+	bool isDuck(string classname) {
+		return(classname == "Duck");
+	}
+
+
+	~Duck() {
+		//printf("~Duck\n");
+	}
+};
+
+class Goose : public Animal {
+public:
+	Goose() {
+
+	}
+
+	void run() {
+		printf("Goose::run\n");
+	}
+
+	void voice() {
+		printf("gagaga");
+	}
+
+	string classname() {
+		return "Goose";
+	}
+
+	bool isGoose(string classname) {
+		return(classname == "Goose");
+	}
+};
 int main()
 {
     
