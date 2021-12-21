@@ -5,7 +5,10 @@ class Animal {
 public:
 	virtual void voice() {
 	}
+	Animal() {
+		//printf("Animal()\n");
 
+	}
 	void Do1() {					//метод, который будет перекрываться
 		printf("Animal::Do1\n");
 	}
@@ -15,7 +18,7 @@ public:
 	}
 
 	virtual void Do3() {			//виртуальный метод
-		printf("Animal::DoSmth3\n");
+		printf("Animal::Do3\n");
 	}
 	virtual string classname() {
 		return "Animal";
@@ -32,6 +35,7 @@ public:
 class Duck : public Animal {
 public:
 	Duck() {
+		printf("Duck()\n");
 
 	}
 	void sit() {
@@ -63,6 +67,7 @@ public:
 class Goose : public Animal {
 public:
 	Goose() {
+		printf("Goose()\n");
 
 	}
 
@@ -150,6 +155,7 @@ Base& func33(Base& obj) {
 
 int main()
 {
+	setlocale(LC_ALL, "rus");
     srand(time(NULL));
 	printf("создание объекта наследника, находящееся в переменной наследника \n");
 	Duck* a = new Duck();//создание объекта наследника, находящееся в переменной наследника  
@@ -161,7 +167,7 @@ int main()
 
 	printf("создание объекта базового класса, находящееся в переменной базового класса   \n");
 	Animal* b = new Animal();;//создание объекта базового класса, находящееся в переменной базового класса  
-	printf("вызов витруального метода базового класса \n");
+	printf("вызов виртуального метода базового класса \n");
 	b->Do3();//вызов витруального метода базового класса
 	delete b;
 
